@@ -1,0 +1,161 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>wugz-app-parent</artifactId>
+    <groupId>com.wugz.app</groupId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.wugz.app</groupId>
+  <artifactId>wugz-app-core</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+   <properties>
+   	 <app.version>0.0.1-SNAPSHOT</app.version>
+	 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	 <spring.version>4.1.4.RELEASE</spring.version>  
+     <dubbo.version>2.5.3</dubbo.version> 
+     <zookeeper.version>3.4.6</zookeeper.version>
+     <commons-lang3.version>3.1</commons-lang3.version>
+     <mybatis.version>3.2.8</mybatis.version>
+     <mybatis-spring.version>1.2.2</mybatis-spring.version>
+     <druid.version>1.0.12</druid.version>
+   </properties>
+    <!-- 依赖预配置 -->
+	<dependencies>
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-core</artifactId>  
+	            <version>${spring.version}</version>  
+	     </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-beans</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-context</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-tx</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-web</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-webmvc</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-jdbc</artifactId>  
+	            <version>${spring.version}</version>  
+	        </dependency>  
+	  
+	        <dependency>  
+	            <groupId>org.springframework</groupId>  
+	            <artifactId>spring-test</artifactId>  
+	            <version>${spring.version}</version>  
+	            <scope>test</scope> 
+	       </dependency> 
+	       
+	        <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jms</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			
+			<dependency>  
+	            <groupId>com.101tec</groupId>  
+	            <artifactId>zkclient</artifactId>  
+	            <version>${zkclient.version}</version>  
+		   </dependency>  
+	       
+	        <dependency>  
+	            <groupId>com.alibaba</groupId>  
+	            <artifactId>dubbo</artifactId>  
+	            <version>${dubbo.version}</version>  
+	            <exclusions>  
+	                <exclusion>  
+	                    <artifactId>spring</artifactId>  
+	                    <groupId>org.springframework</groupId>  
+	                </exclusion>  
+	            </exclusions>  
+	        </dependency>  
+	        <dependency>  
+	            <groupId>org.apache.zookeeper</groupId>  
+	            <artifactId>zookeeper</artifactId>  
+	            <version>${zookeeper.version}</version>  
+	        </dependency>  
+	        <dependency>
+			    <groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			 <!-- mybatis 包 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis</artifactId>  
+            <version>${mybatis.version}</version>  
+        </dependency>  
+  
+        <!--mybatis spring 插件 -->  
+        <dependency>  
+            <groupId>org.mybatis</groupId>  
+            <artifactId>mybatis-spring</artifactId>  
+            <version>${mybatis-spring.version}</version>  
+        </dependency>  
+  
+        <!-- mysql连接 -->  
+        <!-- 数据源 -->  
+        <dependency>  
+            <groupId>com.alibaba</groupId>  
+            <artifactId>druid</artifactId>  
+            <version>${druid.version}</version>  
+        </dependency>  
+        
+         <dependency>  
+            <groupId>mysql</groupId>  
+            <artifactId>mysql-connector-java</artifactId>  
+            <version>${mysql.version}</version>  
+        </dependency>
+        
+        <dependency>  
+               <groupId>com.fasterxml.jackson.core</groupId>  
+               <artifactId>jackson-core</artifactId>  
+               <version>${jackson.version}</version>  
+           </dependency>  
+           <dependency>  
+               <groupId>com.fasterxml.jackson.core</groupId>  
+               <artifactId>jackson-databind</artifactId>  
+               <version>${jackson.version}</version>  
+           </dependency>  
+           <dependency>  
+               <groupId>com.fasterxml.jackson.core</groupId>  
+               <artifactId>jackson-annotations</artifactId>  
+               <version>${jackson.version}</version>  
+		</dependency> 
+		<dependency>  
+           	<groupId>commons-fileupload</groupId>  
+            <artifactId>commons-fileupload</artifactId>  
+            <version>${commons-fileupload.version}</version>  
+        </dependency> 
+       <dependency>  
+            <groupId>org.aspectj</groupId>  
+            <artifactId>aspectjweaver</artifactId>  
+            <version>${aspectjweaver.version}</version>  
+		</dependency>  
+	</dependencies>
+</project>

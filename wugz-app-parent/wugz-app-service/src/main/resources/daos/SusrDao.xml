@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wugz.app.base.dao.SusrDao" >
+<resultMap type="com.wugz.app.base.domain.sUsr" id="findsUsrMap">
+    <id column="INSTU_CDE" property="instuCde" jdbcType="VARCHAR" />
+    <id column="USR_CDE" property="usrCde" jdbcType="VARCHAR" />
+    <result column="EXT_IND" property="extInd" jdbcType="VARCHAR" />
+    <result column="RUN_IND" property="runInd" jdbcType="VARCHAR" />
+    <result column="USR_NAME" property="usrName" jdbcType="VARCHAR" />
+    <result column="USR_ID_TYP" property="usrIdTyp" jdbcType="VARCHAR" />
+    <result column="USR_ID_NO" property="usrIdNo" jdbcType="VARCHAR" />
+    <result column="USR_PASSWORD" property="usrPassword" jdbcType="VARCHAR" />
+    <result column="USR_TEL" property="usrTel" jdbcType="VARCHAR" />
+    <result column="USR_EMAIL" property="usrEmail" jdbcType="VARCHAR" />
+    <result column="USR_BCH" property="usrBch" jdbcType="VARCHAR" />
+    <result column="DEP_CDE" property="depCde" jdbcType="VARCHAR" />
+    <result column="USR_STS" property="usrSts" jdbcType="VARCHAR" />
+    <result column="REST_IND" property="restInd" jdbcType="VARCHAR" />
+    <result column="USR_REPASS_IND" property="usrRepassInd" jdbcType="VARCHAR" />
+    <result column="PASS_MODI_DT" property="passModiDt" jdbcType="VARCHAR" />
+    <result column="USR_RMK" property="usrRmk" jdbcType="VARCHAR" />
+    <result column="LAST_CHG_DT" property="lastChgDt" jdbcType="VARCHAR" />
+    <result column="LAST_CHG_USR" property="lastChgUsr" jdbcType="VARCHAR" />
+    <result column="MANAG_IND" property="managInd" jdbcType="VARCHAR" />
+    <result column="USR_SUPER" property="usrSuper" jdbcType="VARCHAR" />
+    <result column="RISK_GRD" property="riskGrd" jdbcType="VARCHAR" />
+    <result column="QU_GRD" property="quGrd" jdbcType="VARCHAR" />
+    <result column="SPECIAL_ROLE" property="specialRole" jdbcType="VARCHAR" />
+    <result column="EMP_DT" property="empDt" jdbcType="VARCHAR" />
+    <result column="IS_RATE" property="isRate" jdbcType="VARCHAR" /> 
+</resultMap>
+<sql id="Base_Column_List" >
+    INSTU_CDE, USR_CDE, EXT_IND, RUN_IND, USR_NAME, USR_ID_TYP, USR_ID_NO, USR_PASSWORD, 
+    USR_TEL, USR_EMAIL, USR_BCH, (select DEPT_NAME from s_dept c where c.DEPT_NO = b.DEP_CDE) AS DEP_CDE, USR_STS, REST_IND, USR_REPASS_IND, PASS_MODI_DT, 
+    USR_RMK, LAST_CHG_DT, LAST_CHG_USR, MANAG_IND, USR_SUPER, RISK_GRD, QU_GRD, SPECIAL_ROLE, 
+    EMP_DT, IS_RATE
+</sql>
+
+<select id="selectOneByObject"  resultMap="findsUsrMap" parameterType="com.wugz.app.base.domain.sUsr">
+	SELECT * FROM s_usr WHERE 1=1
+   	 <if test="instuCde != null" >
+       and INSTU_CDE = #{instuCde,jdbcType=VARCHAR}
+      </if>
+      <if test="usrCde != null" >
+      and USR_CDE = #{usrCde,jdbcType=VARCHAR}
+      </if>
+ 	  <if test="extInd != null" >
+       and EXT_IND = #{extInd,jdbcType=VARCHAR}
+      </if>
+      <if test="runInd != null" >
+       and RUN_IND = #{runInd,jdbcType=VARCHAR}
+      </if>
+      <if test="usrName != null" >
+       and USR_NAME = #{usrName,jdbcType=VARCHAR}
+      </if>
+      <if test="usrIdTyp != null" >
+       and USR_ID_TYP = #{usrIdTyp,jdbcType=VARCHAR}
+      </if>
+      <if test="usrIdNo != null" >
+       and USR_ID_NO = #{usrIdNo,jdbcType=VARCHAR}
+      </if>
+      <if test="usrPassword != null" >
+      and USR_PASSWORD = #{usrPassword,jdbcType=VARCHAR}
+      </if>
+      <if test="usrTel != null" >
+       and USR_TEL = #{usrTel,jdbcType=VARCHAR}
+      </if>
+      <if test="usrEmail != null" >
+       and USR_EMAIL = #{usrEmail,jdbcType=VARCHAR}
+      </if>
+      <if test="usrBch != null" >
+       and USR_BCH = #{usrBch,jdbcType=VARCHAR}
+      </if>
+      <if test="depCde != null" >
+       and DEP_CDE = #{depCde,jdbcType=VARCHAR}
+      </if>
+      <if test="usrSts != null" >
+      and  USR_STS = #{usrSts,jdbcType=VARCHAR}
+      </if>
+      <if test="restInd != null" >
+      and  REST_IND = #{restInd,jdbcType=VARCHAR}
+      </if>
+      <if test="usrRepassInd != null" >
+      and  USR_REPASS_IND = #{usrRepassInd,jdbcType=VARCHAR}
+      </if>
+      <if test="passModiDt != null" >
+      and  PASS_MODI_DT = #{passModiDt,jdbcType=VARCHAR}
+      </if>
+      <if test="usrRmk != null" >
+       and USR_RMK = #{usrRmk,jdbcType=VARCHAR}
+      </if>
+      <if test="lastChgDt != null" >
+      and  LAST_CHG_DT = #{lastChgDt,jdbcType=VARCHAR}
+      </if>
+      <if test="lastChgUsr != null" >
+      and  LAST_CHG_USR = #{lastChgUsr,jdbcType=VARCHAR}
+      </if>
+      <if test="managInd != null" >
+      and  MANAG_IND = #{managInd,jdbcType=VARCHAR}
+      </if>
+      <if test="usrSuper != null" >
+       and USR_SUPER = #{usrSuper,jdbcType=VARCHAR}
+      </if>
+      <if test="riskGrd != null" >
+      and  RISK_GRD = #{riskGrd,jdbcType=VARCHAR}
+      </if>
+      <if test="quGrd != null" >
+      and  QU_GRD = #{quGrd,jdbcType=VARCHAR}
+      </if>
+      <if test="specialRole != null" >
+      and  SPECIAL_ROLE = #{specialRole,jdbcType=VARCHAR}
+      </if>
+      <if test="empDt != null" >
+       and EMP_DT = #{empDt,jdbcType=VARCHAR}
+      </if>
+      <if test="isRate != null" >
+       and IS_RATE = #{isRate,jdbcType=VARCHAR}
+      </if>
+    limit 1
+</select>
+</mapper>

@@ -19,6 +19,7 @@ public class ServiceProvider {
 		}catch (Exception e) {
 			System.out.println("Log4j加载异常");
 		}
+		args = new String[]{"spring","myjetty"};
 		com.alibaba.dubbo.container.Main.main(args);
 	}
 }

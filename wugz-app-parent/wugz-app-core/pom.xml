@@ -9,7 +9,7 @@
   <artifactId>wugz-app-core</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-   <properties>
+<!--    <properties>
    	 <app.version>0.0.1-SNAPSHOT</app.version>
 	 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	 <spring.version>4.1.4.RELEASE</spring.version>  
@@ -19,7 +19,8 @@
      <mybatis.version>3.2.8</mybatis.version>
      <mybatis-spring.version>1.2.2</mybatis-spring.version>
      <druid.version>1.0.20</druid.version>
-   </properties>
+     <jetty.version>6.1.26</jetty.version>
+   </properties> -->
     <!-- 依赖预配置 -->
 	<dependencies>
 	        <dependency>  

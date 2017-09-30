@@ -20,6 +20,12 @@
 	        <dependency>  
 	            <groupId>com.wugz.app</groupId>  
 	            <artifactId>wugz-app-core</artifactId>  
-	        </dependency>  		
+	        </dependency>  
+	        <dependency>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty</artifactId>
+				<version>${jetty.version}</version>
+				<scope>provided</scope>
+			</dependency> 		
 	</dependencies>
 </project>

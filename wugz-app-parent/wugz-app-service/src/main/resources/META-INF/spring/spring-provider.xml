@@ -104,6 +104,18 @@
     <!-- 可通过注解控制事务 -->
 	<tx:annotation-driven  transaction-manager="transactionManager" proxy-target-class="true"/>
     
+    <!-- 慢sql记录 -->
+    <bean id="stat-filter" class="com.alibaba.druid.filter.stat.StatFilter">  
+    	<property name="slowSqlMillis" value="10" />  
+    	<property name="logSlowSql" value="true" />  
+    	<property name="mergeSql" value="true" />  
+	</bean>
+    <bean id="log-filter" class="com.alibaba.druid.filter.logging.Log4jFilter">
+        <property name="statementExecutableSqlLogEnable" value="true" />
+        <property name="resultSetLogEnabled" value="false" />
+  	</bean>
+    
+    
     <!-- 加载Log4j配置
     <bean id="log4j"  class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
     	<property name="targetClass" value="org.springframework.util.Log4jConfigurer"/>

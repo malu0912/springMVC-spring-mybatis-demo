@@ -21,12 +21,12 @@
 	<aop:aspectj-autoproxy/>
 	<context:property-placeholder location="classpath:config/params.properties" ignore-unresolvable="true"/>
 	
- 	<aop:config proxy-target-class="false">
+<!--  	<aop:config proxy-target-class="false">
     	<aop:aspect id="changeIdNo" ref="handleFieldAop" >
       		<aop:pointcut id="target" expression="execution(* com.wugz.app.*.service..*(..))"/>
       		<aop:around method="parameterCheck" pointcut-ref="target"/>
     	</aop:aspect>
-    </aop:config> 
+    </aop:config>  -->
 	<!-- 缓存服务 -->
 	<!-- spring-provider.xml已经配置，这里不需要重复配置 -->
 
